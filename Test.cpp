@@ -1,20 +1,18 @@
 #include <iostream>
-#include <iomanip>
+#include <cstring>
 
 using namespace std;
 
 int main()
 {
-   int width;
-   int height;
-   int number_of_windows;
-   int window_area = 6;
-   cout << "Wall width: " << endl;
-   cout << "Wall height: " << endl;
-   cout << "Number of windows: " << endl;
-   cin >> width >> height >> number_of_windows;
-   cout << "Area: " << height * width - number_of_windows * window_area << endl;
-   
-   
-   return 0;
+
+int score = 0;
+double price = 100;
+if (score > 0 && price < 200 && price / score > 10)
+{
+   cout << "buy" << endl;
+}
+
+return 0;
+
 }
