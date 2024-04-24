@@ -1,18 +1,20 @@
 #include <iostream>
 #include <cstring>
+#include <algorithm>
+#include <cmath>
+#include <fstream>
+#include <vector>
+
 
 using namespace std;
 
-int main()
+main()
 {
-
-int score = 0;
-double price = 100;
-if (score > 0 && price < 200 && price / score > 10)
-{
-   cout << "buy" << endl;
+   char chars[] = "Hello World";
+   int size = strlen(chars);
+   for (int i = 0; i < size; i++)
+   {
+      cout << chars[i];
+   }
 }
 
-return 0;
-
-}
