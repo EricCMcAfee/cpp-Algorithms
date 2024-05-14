@@ -1,43 +1,51 @@
 #include <iostream>
 
-
 using namespace std;
-int BOARDSIZE = 9;
-int NUM_BALLS = 1000000;
 
 int main()
 {
-   //seed the rand() function
+   // seed the rand() function
    srand(time(0));
-   //initialize the array and sete values to 0
-   int distribution[BOARDSIZE];
-   for (int i = 0; i < BOARDSIZE; i++)
+
+   // collect simulation parameters from user
+   cout << "Please enter the size of the board for your simulation >";
+   int boardsize;
+   cin >> boardsize;
+   cout << "Please enter the number of balls for your simulation >";
+   int num_balls;
+   cin >> num_balls;
+
+   // initialize the array and set all values to 0
+   int distribution[boardsize];
+   for (int i = 0; i < boardsize; i++)
    {
       distribution[i] = 0;
    }
-   //main loop for each ball
-   for (int i = 0; i < NUM_BALLS; i++)
+
+   // main loop for each ball
+   for (int ball_num = 0; ball_num < num_balls; ball_num++)
    {
-      int ball = 0;
-      //inner loop for each row of pegs
-      for (int j = 0; j < BOARDSIZE - 1; j++)
+      int ball_pos = 0;
+      // inner loop for each row of pegs
+      for (int row = 0; row < boardsize - 1; row++)
       {
          int probability = rand() % 2;
          if (probability == 1)
          {
-            ball ++;
+            ball_pos++;
          }
       }
-      distribution[ball]++;
-      if (i % 100000 == 0)
+      distribution[ball_pos]++;
+      if (ball_num % 100000 == 0 && ball_num != 0)
       {
-         cout << "Simulating " << i << " ball drops..." << endl;
+         cout << "Simulating " << ball_num << " ball drops..." << endl;
       }
    }
-   for (int i = 0; i < BOARDSIZE; i++)
+   // loop over the resulting array and print
+   for (int i = 0; i < boardsize; i++)
    {
-     cout << distribution[i] << " ";
+      cout << distribution[i] << " ";
    }
-   
+
    return 0;
 }
