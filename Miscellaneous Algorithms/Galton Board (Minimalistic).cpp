@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -15,8 +16,8 @@ int main()
    int num_balls;
    cin >> num_balls;
 
-   // initialize the array and set all values to 0
-   int distribution[boardsize];
+   // initialize the vector and set all values to 0
+   vector<int> distribution(boardsize);
    for (int i = 0; i < boardsize; i++)
    {
       distribution[i] = 0;
