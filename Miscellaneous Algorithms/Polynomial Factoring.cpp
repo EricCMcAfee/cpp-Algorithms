@@ -15,7 +15,7 @@ main()
     int parsing_start = 0;
     int term_length = 0;
 
-    for (int i = 0; i < polynomial.length(); i++)
+    for (int i = 1; i < polynomial.length(); i++)
     {
         if (polynomial[i] == '+' || polynomial[i] == '-')
         {
@@ -37,8 +37,11 @@ main()
         {
             terms[i] = terms[i].substr(0, 2);
         }
-        else
+        else if (term[0] == '+')
         {
+            terms[i] = terms[i].substr(1, 1);
+        }
+        else{
             terms[i] = terms[i].substr(0, 1);
         }
     }
